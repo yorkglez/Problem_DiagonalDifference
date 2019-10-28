@@ -27,9 +27,8 @@ public class Solution
         {
             //Create new array into list
             matrix.add(new ArrayList<Integer>());
-
             //Get and add number to list
-            for(int j = 0; j < 3; j++)
+            for(int j = 0; j < rows; j++)
             {
                 number = in.nextInt();
                 matrix.get(i).add(number);
@@ -38,27 +37,28 @@ public class Solution
 
         //output result
         result = diagonalDifference(matrix);
-        System.out.println(result);
+        System.out.println(matrix);
     }
 
     //Function
     public static int diagonalDifference(List<List<Integer>> matrix)
     {
         //Variables declaration
-        int sumLtR = 0;
-        int sumRtL = 0;
+        int diagonal = 0;
+        int diagonal_L = 0;
 
         //Process of sum diagonals
         for(int i = 0, j = matrix.size() - 1; i < matrix.size(); i++, j--)
         {
             //Sum left to right
-            sumLtR += matrix.get(i).get(i);
+        	System.out.println(matrix.get(i));
+            diagonal += matrix.get(i).get(i);
 
             //Sum Right to left
-            sumRtL += matrix.get(i).get(j);
+            diagonal_L += matrix.get(i).get(j);
         }
 
         //Subtraction of diagonals and get absolute
-        return Math.abs(sumLtR - sumRtL);
+        return Math.abs(diagonal - diagonal_L);
     }
 }

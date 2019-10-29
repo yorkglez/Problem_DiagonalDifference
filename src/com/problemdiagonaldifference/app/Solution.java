@@ -29,7 +29,7 @@ public class Solution
             matrix.add(new ArrayList<Integer>());
 
             //Get and add number to list
-            for(int j = 0; j < 3; j++)
+            for(int j = 0; j < rows; j++)
             {
                 number = in.nextInt();
                 matrix.get(i).add(number);
